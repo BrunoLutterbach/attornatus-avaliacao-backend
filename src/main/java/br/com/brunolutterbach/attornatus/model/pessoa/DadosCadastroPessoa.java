@@ -12,7 +12,7 @@ import java.util.List;
 public record DadosCadastroPessoa(
         @NotBlank
         String nome,
-        @NotNull
+        @NotNull(message = "Data de nascimento não pode ser vazia")
         @JsonFormat(pattern = "dd/MM/yyyy")
         LocalDate dataNascimento,
         @Valid
